@@ -15,7 +15,7 @@ function ci_is_correct_uruguay(cidc) {
 	cidc = String(cidc);
 	if(isNaN(cidc) || cidc.length < 7)
 		return false;
-	ci = cidc.substr(0,cidc.length() - 1);
-	dc = cidc.substr(cidc.length() - 1,1);
+	ci = cidc.substr(0,cidc.length - 1);
+	dc = cidc.substr(cidc.length - 1,1);
 	return dc == get_dc_uruguay(ci);
 }
