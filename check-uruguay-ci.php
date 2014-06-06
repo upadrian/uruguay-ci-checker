@@ -18,7 +18,7 @@
 function get_dc_uruguay($ci) {
 	if(!is_numeric($ci))
 		return false;
-	$ci = str_pad($ci,(8 - strlen($ci)),"0",STR_PAD_LEFT);
+	$ci = str_pad((string)$ci, 7, "0", STR_PAD_LEFT);
 	$ci = str_split($ci);
 	$control = array(2,9,8,7,6,3,4);
 	$sum = 0;
