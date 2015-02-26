@@ -38,7 +38,7 @@ function get_dc_uruguay($ci) {
  */
  
 function ci_is_correct_uruguay($cidc = "12345678") {
-	return (!is_numeric($cidc) || strlen($cidc) < 7)?false:function ($cidc) {
+	return (!is_numeric($cidc) || strlen($cidc) < 7 || strlen($cidc) > 8 )?false:function ($cidc) {
 		$ci = substr($cidc,0,strlen($cidc) - 1);
 		$dc = substr($cidc,strlen($cidc) - 1,1);
 		return $dc === get_dc_uruguay($ci);
