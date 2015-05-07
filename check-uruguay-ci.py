@@ -1,5 +1,12 @@
+def input_ci_filter(input_ci):
+    sci = str(input_ci)
+    sci = sci.replace(".", "")
+    sci = sci.replace("-", "")
+    sci = sci.strip()
+    return sci
+
 def get_vdigit(ci):
-    sci = str(ci).strip()
+    sci = input_ci_filter(ci)
     vdigit = -1
     if (len(sci) == 7):
         sum = 0
@@ -13,7 +20,7 @@ def get_vdigit(ci):
     return vdigit
 
 def validate_ci(ci):
-    sci = str(ci).strip()
+    sci = input_ci_filter(ci)
     isValid = False;
     if (len(sci) == 8):
         vdigit = sci[7:8]
@@ -23,7 +30,14 @@ def validate_ci(ci):
     return isValid
 
 if __name__ == "__main__":
-    # TEST
-    print "4369706 -> " + get_vdigit(4369706)
-    print "2629255 -> " + get_vdigit(2629255)
-    print "IS VALID 26292556 -> " + str(validate_ci(26292556))
+    # TEST FOR GET VDIGIT
+    print "TEST: __GET VDIGIT__"
+    test_entries_get_vdigit = ["4369706", "2629255", "4.369.706", "2.629.255"]
+    for entry in test_entries_get_vdigit:
+        print entry + " -> " + get_vdigit(entry)
+    # TEST FOR VALIDATE CI
+    print "TEST: __VALIDATE CI__"
+    test_entries_validate = ["43697069", "4369706-8", "4.369.706-8"]
+    for entry in test_entries_validate:
+        print entry + " -> " + str(validate_ci(entry))
+
