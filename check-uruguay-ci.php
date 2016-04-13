@@ -29,11 +29,14 @@ class ci {
         return (int)(($rest != 0) ? 10 - $rest:$rest);
     }
     public static function iscorrect($cidc = "12345678") {
-        return (!is_numeric($cidc) || strlen($cidc) < 6 || strlen($cidc) > 8) ? false:function ($cidc) {
+        if( (!is_numeric($cidc) || strlen($cidc) < 6 || strlen($cidc) > 8) ){
+            return false;
+        } else{
             $ci = substr($cidc, 0, strlen($cidc) - 1);
             $dc = substr($cidc, strlen($cidc) - 1, 1);
             return (int)$dc === self::getdc($ci);
-        };
+        }
     }
+
 }
 ?>
