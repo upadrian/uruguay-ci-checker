@@ -33,7 +33,7 @@ class ci {
             $ci = substr($cidc, 0, strlen($cidc) - 1);
             $dc = substr($cidc, strlen($cidc) - 1, 1);
             return (int)$dc === self::getdc($ci);
-        }
+        };
     }
 }
 ?>
