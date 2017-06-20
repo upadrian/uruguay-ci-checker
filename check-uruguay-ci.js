@@ -23,7 +23,7 @@ function CiCheck() {
 	};
 	this.isCorrect = function(ciDc) {
 		ciDc = String(ciDc);
-		if(isNaN(ciDc) || ciDc.length < 7) {
+		if(isNaN(ciDc) || ciDc.length < 7 || ciDc.length > 8) {
 			return false;
 		}
 		var ci = ciDc.substr(0, ciDc.length - 1),

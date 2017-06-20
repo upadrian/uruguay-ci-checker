@@ -29,7 +29,7 @@ class ci {
         return (int)(($rest != 0) ? 10 - $rest:$rest);
     }
     public static function iscorrect($cidc = "12345678") {
-        if( (!is_numeric($cidc) || strlen($cidc) < 6 || strlen($cidc) > 8) ){
+        if( (!is_numeric($cidc) || strlen($cidc) < 7 || strlen($cidc) > 8) ){
             return false;
         } else{
             $ci = substr($cidc, 0, strlen($cidc) - 1);
